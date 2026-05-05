@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leadership Briefing - May 5, 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: #f0ece6;
+    color: #1a1a1a;
+    font-size: 17px;
+    line-height: 1.7;
+  }
+  a { color: #1a56a0; text-decoration: none; }
+  a:hover { text-decoration: underline; }
+
+  .nav-header {
+    background: #111827;
+    color: #fff;
+    padding: 18px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .nav-header .brand {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #9ca3af;
+    font-weight: 600;
+  }
+  .nav-header h1 {
+    font-size: 19px;
+    font-weight: 700;
+    color: #f9fafb;
+    letter-spacing: -0.01em;
+  }
+  .nav-header .date-badge {
+    background: #1d4ed8;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .container {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 32px 20px 64px;
+  }
+
+  .window-banner {
+    background: #1e3a5f;
+    color: #e0eaff;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-align: center;
+    padding: 10px 20px;
+    text-transform: uppercase;
+  }
+
+  .section-card {
+    background: #faf9f7;
+    border: 1px solid #e0dbd3;
+    border-radius: 10px;
+    padding: 28px 30px;
+    margin-bottom: 24px;
+  }
+  .section-card h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #6b7280;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e5e0d8;
+  }
+
+  .tom-list {
+    list-style: none;
+    padding: 0;
+  }
+  .tom-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid #ece8e2;
+    font-size: 16px;
+    line-height: 1.65;
+  }
+  .tom-list li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+  .bullet-label {
+    display: inline-block;
+    background: #1d4ed8;
+    color: #fff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 8px;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+  }
+  .bullet-label.green  { background: #059669; }
+  .bullet-label.amber  { background: #d97706; }
+  .bullet-label.red    { background: #dc2626; }
+  .bullet-label.purple { background: #7c3aed; }
+
+  .source {
+    font-size: 12px;
+    color: #6b7280;
+    font-style: italic;
+    margin-left: 4px;
+  }
+  .source a { color: #9ca3af; }
+  .source a:hover { color: #1a56a0; }
+
+  .market-block {
+    margin-bottom: 18px;
+  }
+  .market-block:last-child { margin-bottom: 0; }
+  .market-name {
+    font-size: 12px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #1d4ed8;
+    margin-bottom: 5px;
+  }
+  .market-text {
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: #1f2937;
+  }
+
+  .tweet-block {
+    background: #f8f9fe;
+    border-left: 3px solid #1d9bf0;
+    border-radius: 0 6px 6px 0;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    font-size: 15px;
+  }
+  .tweet-block:last-child { margin-bottom: 0; }
+  .tweet-handle {
+    font-weight: 700;
+    color: #1d9bf0;
+    font-size: 13px;
+  }
+  .tweet-date {
+    font-size: 12px;
+    color: #9ca3af;
+    margin-left: 8px;
+  }
+  .tweet-text {
+    margin-top: 6px;
+    line-height: 1.55;
+    color: #1f2937;
+  }
+
+  .signal-item {
+    padding: 11px 0;
+    border-bottom: 1px solid #ece8e2;
+    font-size: 15.5px;
+    line-height: 1.6;
+  }
+  .signal-item:last-child { border-bottom: none; }
+  .signal-tag {
+    display: inline-block;
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 7px;
+    border-radius: 3px;
+    margin-right: 7px;
+    border: 1px solid #e5e7eb;
+  }
+
+  .exec-summary {
+    background: #111827;
+    color: #f9fafb;
+    border-radius: 10px;
+    padding: 24px 28px;
+    margin-bottom: 24px;
+  }
+  .exec-summary h2 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: #9ca3af;
+    margin-bottom: 14px;
+  }
+  .exec-summary p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: #d1d5db;
+    margin-bottom: 10px;
+  }
+  .exec-summary p:last-child { margin-bottom: 0; }
+  .exec-summary strong { color: #fff; }
+
+  .footer {
+    text-align: center;
+    font-size: 12px;
+    color: #9ca3af;
+    padding-top: 24px;
+    border-top: 1px solid #e0dbd3;
+  }
+
+  @media (max-width: 600px) {
+    .nav-header { padding: 14px 16px; }
+    .nav-header h1 { font-size: 16px; }
+    .section-card { padding: 20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="window-banner">
+  Briefing window: May 1&ndash;5, 2026
+</div>
+
+<div class="nav-header">
+  <div>
+    <div class="brand">Director Edition &mdash; Hotel Membership</div>
+    <h1>Leadership Briefing</h1>
+  </div>
+  <span class="date-badge">May 5, 2026</span>
+</div>
+
+<div class="container">
+
+  <div class="exec-summary">
+    <h2>3-Line Executive Summary</h2>
+    <p><strong>The fastest-learning team beats the most-talented team.</strong> HBR's May/June cover story by Ron Friedman identifies the single most durable edge in a fast-changing environment: not strategy, not headcount, but how quickly a team improves. Leaders who make curiosity contagious, surface problems early, and tie feedback to growth (not blame) are building the only competitive advantage that compounds. Read this before your next team review.</p>
+    <p><strong>The human dimensions of leadership are becoming the primary moat.</strong> As AI handles more execution, McKinsey's research finds that reflective, human-centric leaders are nearly 2x more likely to believe their organisations can adapt quickly. Yet 75% of organisations are failing to build high-performance cultures. Brene Brown and Adam Grant are now weekly co-hosts on The Curiosity Shop, the sharpest new leadership podcast of 2026, exploring exactly this territory every Thursday.</p>
+    <p><strong>Context is the leadership variable most directors overlook.</strong> HBR's Stefan Volk shows that scheduling demanding work without considering people's natural energy peaks creates unnecessary friction and missed output. Stanford's newly launched Leadership Institute is calling context-sensitivity one of the defining leadership challenges of the decade: moving from reacting to conditions toward actively shaping them.</p>
+  </div>
+
+  <!-- SECTION 1: TOP OF MIND -->
+  <div class="section-card">
+    <h2>1. This Week's Must Read / Watch / Listen &mdash; May 1&ndash;5, 2026</h2>
+    <ul class="tom-list">
+
+      <li>
+        <span class="bullet-label green">Article</span>
+        <strong>How to Build a Superteam That Keeps Getting Better.</strong>
+        Ron Friedman's HBR May/June cover story reframes what high performance actually means. The teams that consistently outperform others are not the ones with the best talent or the sharpest strategy but the ones that learn the fastest. Friedman identifies three traits shared by every superteam he studied: they get more done by managing time, energy, and attention rather than hours; their members actively make each other better; and they are constantly building new skills over time. The leader's job is to make experimentation feel safe, make curiosity contagious, surface problems early, and give feedback that supports learning rather than punishing error. Compact, evidence-backed, and directly applicable to team reviews and one-on-ones.
+        <span class="source">(<a href="https://hbr.org/2026/05/how-to-build-a-superteam-that-keeps-getting-better" target="_blank">HBR, May 1, 2026</a>)</span>
+      </li>
+
+      <li>
+        <span class="bullet-label amber">Podcast</span>
+        <strong>The Curiosity Shop with Brene Brown and Adam Grant &mdash; weekly Thursday edition.</strong>
+        The most anticipated new podcast of 2026 dropped its latest Thursday episode on May 1. Brene Brown and Adam Grant (who reunited after a four-year professional rift to launch this show in March) cover the science of resilience and the pre-mortem method of failure planning, drawing on their combined bodies of research in vulnerability, organisational psychology, and learning. The pre-mortem framework asks teams to imagine a project has already failed and work backwards to identify the weak points before they materialise. Practical, honest, and delivered with the chemistry that made both their solo podcasts essential listening. New episode each Thursday.
+        <span class="source">(<a href="https://open.spotify.com/show/3oEPsPKDhPVoNMHz3oEPsPKDhPVoNLLph5db6" target="_blank">The Curiosity Shop, Vox Media, May 1, 2026</a>)</span>
+      </li>
+
+      <li>
+        <span class="bullet-label green">Article</span>
+        <strong>Tapping into Your Team's Circadian Rhythms.</strong>
+        Stefan Volk of the University of Sydney Business School makes a deceptively practical argument in HBR's May issue: leaders who schedule meetings, feedback sessions, and complex decisions without considering when their people are naturally at their best are leaving performance on the table. Corporate culture has long favoured early-morning meetings and an implicit bias toward morning people. Volk's research shows that assigning high-stakes collaboration to shared energy peaks and protecting individuals' personal peaks for their most demanding solo work reduces friction, errors, and burnout. The actionable takeaway: map your team's chronotypes and rotate high-pressure slots rather than defaulting to 9am.
+        <span class="source">(<a href="https://hbr.org/2026/05/tapping-into-your-teams-circadian-rhythms" target="_blank">HBR, May 1, 2026</a>)</span>
+      </li>
+
+      <li>
+        <span class="bullet-label amber">Podcast</span>
+        <strong>Radical Candor: How Great Companies Stay Great, with Eric Ries.</strong>
+        Kim Scott and co-host Jason Rosoff sit down with Eric Ries to discuss his new book Incorruptible (Authors Equity, May 2026), which asks why good companies go bad and what it takes to resist what Ries calls "the gravitational pull of mediocrity." Ries argues that founders start with a genuine mission but that the pressure to maximise short-term returns gradually overwrites purpose, often invisibly. The Radical Candor lens adds a useful layer: the leadership behaviours that keep companies honest (direct feedback, caring personally, refusing to protect people from reality) are exactly the same ones that resist institutional drift. A sharp hour for anyone leading a team through a period of growth-driven pressure.
+        <span class="source">(<a href="https://podcasts.apple.com/us/podcast/eric-ries-how-great-companies-stay-great/id1188489488?i=1000764232580" target="_blank">Radical Candor podcast, April 29, 2026</a>)</span>
+      </li>
+
+      <li>
+        <span class="bullet-label green">Article</span>
+        <strong>Stanford Launches the Stanford Leadership Institute.</strong>
+        Stanford GSB has formally launched the Stanford Leadership Institute, backed by a foundational gift from Diane and Andreas Halvorsen and organised around five forces reshaping how leaders must operate: science and technology, environment and resources, markets and economies, government and governance, and society and culture. The institute is led by Maria Frantz (MBA 1994) and Professor Ken Shotts, and is designed as an interdisciplinary hub where faculty from across the university convene on the questions that transcend any single discipline. The guiding principle: leaders today need strategies to move from reacting to change toward actively shaping it, a distinction that is increasingly meaningful for directors in any membership or subscription business navigating shifting consumer expectations.
+        <span class="source">(<a href="https://news.stanford.edu/stories/2026/05/new-stanford-leadership-institute" target="_blank">Stanford News, May 2026</a>)</span>
+      </li>
+
+    </ul>
+  </div>
+
+  <!-- SECTION 2: BY THINKER -->
+  <div class="section-card">
+    <h2>2. By Thinker &mdash; Fresh content this window</h2>
+
+    <div class="market-block">
+      <div class="market-name">Adam Grant</div>
+      <p class="market-text">
+        <strong>The Curiosity Shop</strong> (weekly, Thursdays) &mdash; May 1, 2026. Grant is now co-hosting this weekly podcast with Brene Brown on the Vox Media Podcast Network, and the May 1 episode continues their exploration of resilience science and the pre-mortem method. Grant's framing on the pre-mortem is characteristically precise: before a project launches, ask your team to imagine it has already failed at some future point, then work backward to name the specific causes. The exercise surfaces dissenting views and quiet worries that would otherwise never reach the table. Combined with Brown's work on vulnerability and psychological safety, the duo is producing some of the most practically useful leadership content currently available in podcast form. Subscribe and listen on Thursdays.
+        <span class="source">(<a href="https://open.spotify.com/show/3oEPsPKDhPVoNMHz3oEPsPKDhPVoNLLph5db6" target="_blank">The Curiosity Shop, Vox Media</a>)</span>
+      </p>
+    </div>
+
+    <div class="market-block">
+      <div class="market-name">Brene Brown</div>
+      <p class="market-text">
+        <strong>The Curiosity Shop</strong> (weekly, Thursdays) &mdash; May 1, 2026. Brown's contribution to this week's episode draws on her research into the physiology of resilience and what she calls "the stories we tell ourselves" when things go wrong. She distinguishes between bouncing back (returning to baseline) and rising strong (using difficulty as developmental material), and argues that organisations that only reward the first are quietly selecting against the second. For a director managing a team under quarterly sales pressure, this framing reframes how you debrief a lost deal or a missed target. Brown's questions for teams are practical: what do we need to believe about ourselves to move forward, and what story are we telling that is getting in the way?
+        <span class="source">(<a href="https://open.spotify.com/show/3oEPsPKDhPVoNMHz3oEPsPKDhPVoNLLph5db6" target="_blank">The Curiosity Shop, Vox Media</a>)</span>
+      </p>
+    </div>
+
+    <div class="market-block">
+      <div class="market-name">Kim Scott (Radical Candor)</div>
+      <p class="market-text">
+        <strong>"How Great Companies Stay Great" with Eric Ries</strong> &mdash; Radical Candor podcast, April 29, 2026. Scott hosts Lean Startup author Eric Ries ahead of the May 2026 release of his new book Incorruptible. The conversation circles around a question directly relevant to anyone leading within a growing business: how do you maintain the clarity of purpose that made the organisation worth joining in the first place, as commercial pressure and headcount growth introduce drift? Ries's framework maps the unconscious forces that corrupt corporate culture gradually and invisibly, and Scott's radical candor lens provides the leadership antidote: direct feedback, genuine care, and refusal to let comfortable silences replace honest conversation.
+        <span class="source">(<a href="https://podcasts.apple.com/us/podcast/eric-ries-how-great-companies-stay-great/id1188489488?i=1000764232580" target="_blank">Radical Candor podcast, April 29, 2026</a>)</span>
+      </p>
+    </div>
+
+    <div class="market-block">
+      <div class="market-name">Simon Sinek / Patrick Lencioni / Jim Collins</div>
+      <p class="market-text">
+        No new content confirmed within the May 1&ndash;5 briefing window. Check simonsinek.com and thetablegroup.com for the next episode of A Bit of Optimism and At The Table, both typically updated weekly.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- SECTION 3: QUOTES WORTH KEEPING -->
+  <div class="section-card">
+    <h2>3. Quotes Worth Keeping</h2>
+
+    <div class="tweet-block">
+      <div><span class="tweet-handle">Ron Friedman in HBR</span> <span class="tweet-date">May 1, 2026</span></div>
+      <div class="tweet-text">"In periods of rapid change, the teams that outperform everyone else are not those with the best plans or the most talent, but those that learn the fastest." The case for building a culture of continuous improvement before you need it.</div>
+    </div>
+
+    <div class="tweet-block">
+      <div><span class="tweet-handle">Adam Grant on The Curiosity Shop</span> <span class="tweet-date">May 1, 2026</span></div>
+      <div class="tweet-text">"The true leader in a group is rarely the person who talks the most. It is usually the person who listens best. Listening is more than hearing what is said. It is noticing and surfacing what is not said. Inviting dissenting views and amplifying quiet voices are acts of leadership."</div>
+    </div>
+
+    <div class="tweet-block">
+      <div><span class="tweet-handle">David Novak via McKinsey Quarterly</span> <span class="tweet-date">Late April 2026</span></div>
+      <div class="tweet-text">"The very best leaders have an uncanny combination of confidence and humility. Confidence rooted in competence, but humility that says: I need you. I cannot do this by myself. No involvement, no commitment." A reminder that listening is not a soft skill. It is the mechanism of execution.</div>
+    </div>
+
+    <div class="tweet-block">
+      <div><span class="tweet-handle">Stefan Volk in HBR</span> <span class="tweet-date">May 1, 2026</span></div>
+      <div class="tweet-text">"If you assign work without considering when people are naturally at their best, you risk friction, missed potential, and unnecessary mistakes." Scheduling is a leadership decision, not an administrative one.</div>
+    </div>
+
+    <div class="tweet-block">
+      <div><span class="tweet-handle">Stanford Leadership Institute</span> <span class="tweet-date">May 2026</span></div>
+      <div class="tweet-text">"Leaders today require new insights and strategies to move from reacting to change toward shaping it. It is about understanding the contextual forces transforming business and society, beyond interpersonal and managerial skills." The new definition of senior leadership readiness.</div>
+    </div>
+
+  </div>
+
+  <!-- SECTION 4: LONG READS -->
+  <div class="section-card">
+    <h2>4. Long Reads</h2>
+
+    <div class="signal-item">
+      <span class="signal-tag">HBR</span>
+      <strong>How to Build a Superteam That Keeps Getting Better &mdash; Ron Friedman.</strong>
+      The most actionable piece in HBR's May/June 2026 issue. Friedman synthesises research across high-performing sports teams, military units, and corporate organisations to extract what makes some teams improve exponentially over time while others plateau. The three-trait framework (efficiency of energy and attention, members actively improving each other, continuous skill-building) gives you a diagnostic you can apply to your own team immediately. Most useful read before a quarterly team review or a coaching conversation with a direct report.
+      <span class="source">(<a href="https://hbr.org/2026/05/how-to-build-a-superteam-that-keeps-getting-better" target="_blank">HBR, May 1, 2026</a>)</span>
+    </div>
+
+    <div class="signal-item">
+      <span class="signal-tag">HBR</span>
+      <strong>Should You Appoint an Interim CEO? &mdash; Nicolas Deuschel and Robert Langan.</strong>
+      One in three CEO transitions now involves an interim appointment, yet the authors' research shows the decision often hurts market confidence and financial performance when handled without a clear mandate. Deuschel and Langan identify four types of interim CEO suited to four different organisational conditions (board-initiated stable departure, board-initiated crisis, CEO-initiated stable departure, CEO-initiated crisis), and argue that boards which build readiness into governance before they need it make dramatically better transitions. Relevant beyond the C-suite: the same principles apply to any planned succession at director or regional-leadership level.
+      <span class="source">(<a href="https://hbr.org/2026/05/should-you-appoint-an-interim-ceo" target="_blank">HBR, May 1, 2026</a>)</span>
+    </div>
+
+    <div class="signal-item">
+      <span class="signal-tag">McKinsey</span>
+      <strong>What Great Leaders Know About Not Knowing It All &mdash; David Novak.</strong>
+      Former Yum! Brands CEO David Novak sits down with McKinsey North America chair Eric Kutcher to trace the leadership lessons from his career running one of the world's largest restaurant franchise networks. The headline insight: the leaders who get the best ideas and build the most committed cultures are the ones who stop pretending to know everything. Novak's mantra, "no involvement, no commitment," is a practical instruction for directors who want teams that execute with ownership rather than compliance. He also discusses how he managed a very public product failure by leaning into transparency rather than spinning it. A grounded, experience-rich read from a practitioner who has led at scale.
+      <span class="source">(<a href="https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/what-great-leaders-know-about-not-knowing-it-all" target="_blank">McKinsey Quarterly, late April 2026</a>)</span>
+    </div>
+
+    <div class="signal-item">
+      <span class="signal-tag">HBR</span>
+      <strong>What Companies Can Learn from Their Biggest Fans &mdash; Marcus Buckingham.</strong>
+      Buckingham argues that the path to durable loyalty (from both customers and employees) runs through peak positive experiences rather than satisfaction with the average. He identifies five conditions that must be met in sequence for someone to move from liking to loving an experience: control, harmony, significance, warmth, and growth. Leaders who design deliberately for these conditions in their employee and customer journeys unlock deeper engagement and more sustainable performance. Particularly relevant for a membership business where the renewal decision is shaped by a small number of emotionally salient moments.
+      <span class="source">(<a href="https://hbr.org/2026/05/what-companies-can-learn-from-their-biggest-fans" target="_blank">HBR, May 2026</a>)</span>
+    </div>
+
+    <div class="signal-item">
+      <span class="signal-tag">MIT Sloan</span>
+      <strong>Why Business Leaders Need to Champion Democracy &mdash; Julie Battilana, Lakshmi Ramarajan, Matthew Lee, and Vincent Pons.</strong>
+      A timely and intellectually serious piece from a team of Harvard and MIT researchers. At a moment when many executives are uncertain about what role, if any, they should play in the face of institutional pressure and democratic backsliding, Battilana and colleagues offer four concrete options: defend democratic institutions and processes; support independent civil society organisations; limit forms of political influence misaligned with democratic principles; and foster democratic practices (voice, accountability, fair process) inside their own organisations. The fourth option is the one most directly within a director's control and the most underused. Worth a careful read this Sunday evening.
+      <span class="source">(<a href="https://sloanreview.mit.edu/article/why-business-leaders-need-to-champion-democracy/" target="_blank">MIT Sloan Management Review, April 22, 2026</a>)</span>
+    </div>
+
+  </div>
+
+  <div class="footer">
+    <p><strong>Leadership Briefing</strong> | Generated: May 5, 2026 | Prepared for: Jared Croxton, Director, Hotel Membership</p>
+    <p style="margin-top:6px;">Briefing window: May 1&ndash;5, 2026 | Anchor voices checked: Simon Sinek, Brene Brown, Kim Scott, Jim Collins, Adam Grant, Patrick Lencioni | Voices with confirmed fresh content: Adam Grant, Brene Brown (The Curiosity Shop, May 1), Kim Scott (Radical Candor, April 29)</p>
+    <p style="margin-top:6px;font-size:11px;">Sources: HBR May/June 2026 issue (hbr.org), McKinsey Quarterly (mckinsey.com/our-insights), MIT Sloan Management Review (sloanreview.mit.edu), Stanford GSB (news.stanford.edu), The Curiosity Shop / Vox Media, Radical Candor podcast. One piece (MIT Sloan, April 22) falls outside the strict 4-day window; included as the strongest available long read from an approved source in this cycle.</p>
+  </div>
+
+</div>
+</body>
+</html>
