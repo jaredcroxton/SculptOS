@@ -401,7 +401,7 @@ html,body { width:100%; height:100%; overflow:hidden; background:#050e1a; font-f
     opacity:1 !important; pointer-events:none;
     transition:none !important;
     display:none;
-    padding:0 0 90px;
+    padding:0 0 calc(140px + env(safe-area-inset-bottom));
   }
   .slide.active { display:block; pointer-events:auto; }
 
@@ -413,7 +413,7 @@ html,body { width:100%; height:100%; overflow:hidden; background:#050e1a; font-f
   .hd, .s1-inner, .s1-date, .s12-hd,
   .audit-grid, .stat-row, .pillar-row, .three-col, .funnel,
   .cal, .ht-grid, .ht-rule, .trk-grid, .trk-impact, .seo-stack,
-  .ads-grid, .ads-callout, .lc-grid, .plan-grid, .wm,
+  .ads-grid, .ads-callout, .lc-grid, .plan-grid, .src-grid, .wm,
   .wave-wrap { position:static !important; top:auto; left:auto; right:auto; bottom:auto; }
 
   .orb { display:none; }
@@ -1023,32 +1023,22 @@ html,body { width:100%; height:100%; overflow:hidden; background:#050e1a; font-f
     <div class="hd-sub ae-3">Findings drawn from primary brand intel, HVAC marketing research and Google performance data.</div>
   </div>
   <div class="src-grid">
-    <div class="src-card ae-4">
-      <div class="src-host">mtcoolumgolf.com</div>
-      <div class="src-title">Atkinsons Air — Mount Coolum Golf Club Partnership</div>
-      <div class="src-quote">Since opening in 1995, Atkinsons Air Conditioning Sunshine Coast has grown to be one of Queensland's most esteemed residential and commercial air conditioning installation experts.</div>
-    </div>
-    <div class="src-card ae-5">
-      <div class="src-host">mtcoolumgolf.com</div>
-      <div class="src-title">Service Guarantees &amp; Heritage</div>
-      <div class="src-quote">Obligation-free consultation, 100% guarantee on installation quality and all workmanship, fast post-installation support, 30 years of air-conditioning experience. Address: 2/41 Dacmar Rd, Coolum Beach QLD 4573.</div>
-    </div>
-    <div class="src-card alt ae-6">
+    <div class="src-card alt ae-4">
       <div class="src-host">helium-seo.com</div>
-      <div class="src-title">HVAC Marketing Strategies — Reviews, Photos &amp; Video</div>
+      <div class="src-title">HVAC Marketing — Reviews, Photos &amp; Video</div>
       <div class="src-quote">Five-star businesses get more calls than three-star businesses, even if the three-star company has better prices. A text message the day after a successful service call works better than pushy in-person requests.</div>
     </div>
-    <div class="src-card alt ae-7">
+    <div class="src-card alt ae-5">
       <div class="src-host">helium-seo.com</div>
       <div class="src-title">Google Business Profile + Local SEO</div>
       <div class="src-quote">Real local SEO starts with your Google Business Profile. Complete every single field. Upload photos of your trucks, your team, actual work you've done. One digit off in your phone number costs you calls.</div>
     </div>
-    <div class="src-card alt ae-7">
+    <div class="src-card alt ae-6">
       <div class="src-host">helium-seo.com</div>
-      <div class="src-title">Google Local Services Ads &amp; Google Ads</div>
+      <div class="src-title">Local Services Ads &amp; Google Ads</div>
       <div class="src-quote">You only pay when customers actually contact you. 30-40% lower cost per lead vs traditional PPC. Google ranks fast responders higher. Use ad extensions liberally. Geographic targeting saves money.</div>
     </div>
-    <div class="src-card alt2 ae-8">
+    <div class="src-card alt2 ae-7">
       <div class="src-host">blog.google</div>
       <div class="src-title">The Need for Mobile Speed</div>
       <div class="src-quote">53% of visits are likely to be abandoned if pages take longer than 3 seconds to load. Sites loading in 5 seconds earn up to 2x more mobile ad revenue than sites that take 19 seconds.</div>
